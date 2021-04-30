@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tracker</title>
+  </head>
+  <body>
+    <section class="ip">
+      <h2>IP Address Tracker</h2>
+      <div class="container-arrow">
+        <input
+          type="text"
+          id="ipSearch"
+          placeholder="Search for any IP adress or domain"
+          #inputValue
+        />
+        <a class="arrow" href="#" (click)="getData(inputValue.value)"></a>
+      </div>
+    </section>
+
+    <section class="container-card">
+      <div>
+        <p class="small lineal">IP ADDRESS</p>
+        <p class="information">{{ ipAdd }}</p>
+      </div>
+      <span class="line"></span>
+      <div class="container-information">
+        <p class="small">LOCATION</p>
+        <p class="information">{{ area }}, {{ countries }} {{ postal }}</p>
+      </div>
+      <span class="line"></span>
+      <div class="container-information">
+        <p class="small lineal">TIMEZONE</p>
+        <p class="information">UTC {{ zone }}</p>
+      </div>
+      <span class="line"></span>
+      <div class="container-information">
+        <p class="small lineal">ISP</p>
+        <p class="information">{{ isp }}</p>
+      </div>
+    </section>
+
+    <section class="maps">
+      <agm-map [latitude]="lat" [zoom]="zoom" [longitude]="lng">
+        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+      </agm-map>
+    </section>
+  </body>
+</html>
