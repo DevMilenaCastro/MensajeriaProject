@@ -19,7 +19,7 @@ export class ProductComponent {
         this.getData('8.8.8.8');
     }
 
-    getData = async ( prueba) => {
+    getData = async (prueba) => {
         const data = await fetch(`https://geo.ipify.org/api/v1?apiKey=at_GGeLmcJUbTUvhKSpNYBSPrxVC1B4k&ipAddress=${prueba}`);
         const users = await data.json();       
         console.log(users);
